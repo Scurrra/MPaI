@@ -10,16 +10,6 @@ struct Date
     int year;
 };
 
-union Info
-{
-    Date birth;
-    std::string faculty;
-    Info() {}
-    ~Info() {}
-};
-
-enum Field { Faculty, Birth };
-
 class Student
 {
 private:
@@ -38,7 +28,9 @@ public:
         Date& birthDay,
         int& year);
 
-    Info& get(Field& criterion) const;
+    std::string getFaculty() const;
+    Date getBirthday() const;
+    int getYear() const;
     
     void show() const;
 };

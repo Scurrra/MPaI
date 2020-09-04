@@ -21,32 +21,17 @@ void Student::set(std::string& surname, std::string& name, std::string& patronym
     this->year = year; //курс
 }
 
-// ахах, а что ещё?
-Info& Student::get(Field& criterion) const
-{
-    Info info;
-    
-    switch (criterion)
-    {
-    case Faculty:
-        info.faculty = this->faculty;
-        break;
-    
-    case Birth:
-        info.birth = this->birthDay;
-        break;
+std::string Student::getFaculty() const { return faculty; };
 
-    default:
-        break;
-    }
+Date Student::getBirthday() const { return birthDay; };
 
-    return info;
-}
+int Student::getYear() const { return year; };
 
 void Student::show() const
 {
     std::cout << "  Name: " << this->surname << ' ' << this->name << ' ' << this->patronymic << ' ' << std::endl;
     std::cout << "  Was born: " << this->birthDay.month << '.' << this->birthDay.day << '.' << this->birthDay.year;
     std::cout << "  Address and phone number: " << this->address << ", " << this->phoneNumber << std::endl;
-    std::cout << "  Faculty and year: " << this->faculty << ", " << this->year << std::endl;     
+    std::cout << "  Faculty and year: " << this->faculty << ", " << this->year << std::endl;    
+    std::cout << "-----------------------------------------------------------------------------------------------------\n"; 
 }
