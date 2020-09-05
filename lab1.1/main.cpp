@@ -73,13 +73,13 @@ int main()
                         year);
     }
     
-    std::cout << "\n\n\nTask A";
+    std::cout << "\n\n\nTask A\n";
     taskA(students, "MMF");
 
-    std::cout << "\n\n\nTask B";
+    std::cout << "\n\n\nTask B\n";
     taskB(students);
 
-    std::cout << "\n\n\nTask C";
+    std::cout << "\n\n\nTask C\n";
     taskC(students, 2);
 
     return 0;
