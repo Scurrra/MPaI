@@ -1,6 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include <functional>
+
 template<class T>
 struct Node
 {
@@ -54,6 +56,71 @@ public:
     }
 
     int length() const    { return size; }
+    
+    friend Stack<T> merge(Stack<T> first, Stack<T> second, std::function<bool(T, T)> comp)
+    {
+        Stack<T> result;
+        while (first.length() && second.length())
+        {
+            if (comp(first.top(), second.top()))
+            {
+                result.push(first.top());
+                first.pop();
+            }
+            else
+            {
+                result.push(second.top());
+                second.pop();
+            }
+        }
+    
+        while (first.length())
+        {
+            result.push(first.top());
+            first.pop();
+        }
+    
+        while (second.length())
+        {
+            result.push(second.top());
+            second.pop();
+        }
+
+        return result;
+    }
 };
+
+// template<class T>
+// Stack<T> merge(Stack<T>& first, Stack<T>& second, std::function<bool(T&, T&)> comp)
+// {
+//     Stack<T> result;
+//     while (first.length() && second.length())
+//     {
+//         if (comp(first.top(), second.top()))
+//         {
+//             result.push(first.top());
+//             first.pop();
+//         }
+//         else
+//         {
+//             result.push(second.top());
+//             second.pop();
+//         }
+//     }
+    
+//     while (first.length())
+//     {
+//         result.push(first.top());
+//         first.pop();
+//     }
+    
+//     while (second.length())
+//     {
+//         result.push(second.top());
+//         second.pop();
+//     }
+
+//     return result;
+// }
 
 #endif
