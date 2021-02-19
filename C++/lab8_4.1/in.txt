@@ -1,0 +1,4 @@
+borovsky ilya 25 male 3 8.7
+zh natasha 18 female 2 9.4
+dyd pasha 19 male 2 7
+ivanov ivan 20 male 3 6.4
