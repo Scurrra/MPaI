@@ -26,7 +26,7 @@ public class lab2
             for (int j = 0; j < n; j++) 
             {
                 matrix[i][j] = rand.nextInt(2 * n) - n;
-                System.out.print(matrix[i][j] + " ");
+                System.out.printf("%5d", matrix[i][j]);
             }    
 
             System.out.println();
@@ -43,7 +43,7 @@ public class lab2
         {
             for (int j = 0; j < n; j++) 
             {
-                System.out.print(matrix[i][ind[j]] + " ");
+                System.out.printf("%5d", matrix[i][ind[j]]);
             }    
 
             System.out.println();
@@ -59,7 +59,7 @@ public class lab2
         {
             for (int j = 0; j < n; j++) 
             {
-                System.out.print(matrix[i][ind[j]] + " ");
+                System.out.printf("%5d", matrix[ind[i]][j]);
             }    
 
             System.out.println();
